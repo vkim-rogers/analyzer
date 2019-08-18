@@ -73,7 +73,7 @@ pipeline {
                     sh '''
                         kubectl get pods --all-namespaces > /tmp/pods.info
                         cat /tmp/pods.info
-                        grep -E quiz-ui-[a-z0-9]{8,12}-[a-z0-9]{4,6} /tmp/pods.info > /tmp/pods.info.filtered || :
+                        grep -E analyzer-[a-z0-9]{8,12}-[a-z0-9]{4,6} /tmp/pods.info > /tmp/pods.info.filtered || :
                         cat /tmp/pods.info.filtered
                         if [ `cat /tmp/pods.info.filtered | wc -l` = "0" ]
                         then
