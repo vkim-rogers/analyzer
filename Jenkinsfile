@@ -89,8 +89,6 @@ pipeline {
                     sh '''
                         cat /tmp/kubectl.cmds | xargs -I {} sh -c '{}'
                     '''
-
-                    sh 'exit 1'
                 }
 
             }
