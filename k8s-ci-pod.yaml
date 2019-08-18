@@ -37,4 +37,12 @@ spec:
     - name: dockersock
       hostPath:
         path: /var/run/docker.sock
+    - name: kubectl-jenkins
+      secret:
+        defaultMode: 420
+        secretName: kubectl-jenkins
+        items:
+        - key: config
+          path: config
+        optional: false
 
