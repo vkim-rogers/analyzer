@@ -57,9 +57,9 @@ pipeline {
             steps {
                 // BUILD CONTAINER
                 container('dnd'){
-                    sh "docker build --tag dawnbreather/quiz-ui:latest ."
+                    sh "docker build --tag dawnbreather/analyzer-api:latest ."
                     sh "docker login -u'${IMG_REG_CREDS_USR}' -p'${IMG_REG_CREDS_PSW}'"
-                    sh "docker push dawnbreather/quiz-ui:latest"
+                    sh "docker push dawnbreather/analyzer-api:latest"
                 }
             }
         }
