@@ -24,6 +24,15 @@ spec:
     - mountPath: /var/run/docker.sock
       name: dockersock
       readOnly: false
+  - name: kubectl
+    image: roffe/kubectl
+    command:
+    - cat
+    tty: true
+    volumeMounts:
+    - mountPath: "/root/.kube"
+      name: kubectl-jenkins
+      readOnly: true
   volumes:
     - name: dockersock
       hostPath:
